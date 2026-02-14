@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Journey Across India ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+<!-- VALENTINE INTRO -->
+<div id="valentineIntro">
+  <h1>Will You Be My Valentine? ❤️</h1>
+  <div class="valentine-buttons">
+    <button id="yesBtn">YES 💖</button>
+    <button id="noBtn">NO 😏</button>
+  </div>
+  <div id="valHearts"></div>
+</div>
+
+<!-- Sound Effect --->
+
+<audio id="heartbeatSound">
+  <source src="heartbeat.mp3" type="audio/mp3">
+</audio>
+
+
+<!-- JOURNEY INTRO -->
+<div id="intro" style="display:none;">
+  <h1>Our Journey Across India ❤️</h1>
+  <button id="startBtn">Start Our Journey 🚂</button>
+</div>
+
+<div id="map"></div>
+<div id="cloudLayer"></div>
+<div id="memoryOverlay">
+  <button id="closeMemory">✖</button>
+  <h2 id="memoryTitle"></h2>
+  <div class="gallery">
+    <div class="slides"></div>
+  </div>
+  <div class="videos"></div>
+</div>
+
+<div id="hearts"></div>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  background: black;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* MAP */
+#map {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
+
+/* VALENTINE INTRO SCREEN */
+
+#valentineIntro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at center, #ff4e88, #8b0000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 6000;
+  text-align: center;
+}
+
+#valentineIntro h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.valentine-buttons {
+  position: relative;
+  width: 300px;
+  height: 150px;
+}
+
+#yesBtn, #noBtn {
+  position: absolute;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#yesBtn {
+  left: 20px;
+  background: white;
+  color: #ff007f;
+}
+
+#noBtn {
+  right: 20px;
+  background: black;
+  color: white;
+}
+
+/* Floating Hearts Background */
+
+#valHearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.valHeart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: floatVal 6s linear infinite;
+}
+
+@keyframes floatVal {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Ring sparkle */
+
+.sparkle {
+  position: fixed;
+  font-size: 30px;
+  pointer-events: none;
+  animation: sparkleAnim 1s ease forwards;
+}
+
+@keyframes sparkleAnim {
+  0% { opacity: 1; transform: scale(0.5); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+
+/* INTRO */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+#startBtn {
+  padding: 15px 30px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  background: crimson;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+/* CLOUD LAYER */
+#cloudLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;   /* VERY IMPORTANT */
+  opacity: 0;
+  z-index: 2000;
+  background: radial-gradient(circle at center,
+      rgba(255,255,255,0.9) 0%,
+      rgba(255,255,255,0.6) 40%,
+      rgba(255,255,255,0.3) 60%,
+      transparent 80%);
+  backdrop-filter: blur(20px);
+  transition: opacity 2s ease;
+}
+
+/* MEMORY OVERLAY */
+#memoryOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 3000;
+
+  opacity: 0;
+  pointer-events: none;   /* Important */
+  transform: scale(0.9);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+#memoryOverlay.active {
+  opacity: 1;
+  pointer-events: auto;   /* Only clickable when active */
+  transform: scale(1);
+}
+
+/* SLIDES */
+.slides img {
+  max-width: 600px;
+  border-radius: 15px;
+  display: none;
+}
+
+.slides img.active {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: 0;
+  color: red;
+  animation: floatUp 6s linear infinite;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
